@@ -8,9 +8,11 @@ function fetchData() {
       fetch(url)
         .then((res) => res.json())
         .then((poke) => console.log(poke));
-      const html = data.results
+      let html = data.results
         .map((pokemon) => {
-          return `<p>Name: ${pokemon.name}</p> `;
+          return `
+         <p>Pokemon Name: ${pokemon.name} </br> API URL: ${pokemon.url} </p> 
+          `;
         })
         .join("");
       console.log(html);
@@ -53,9 +55,7 @@ fetch("https://pokeapi.co/api/v2/pokemon/")
       .then((res) => res.json()) 
       .then((pokemon) => console.log(pokemon)); 
 
-    //  pokemon.forEach((name, abilities) => {
-    // console.log(`This ${name + 1} has these abilities ${abilities}`);
-    // });
+  
     console.log(data);
   });
  */
