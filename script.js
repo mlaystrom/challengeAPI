@@ -1,26 +1,34 @@
+//fetching the url
 function fetchData() {
   fetch("https://pokeapi.co/api/v2/pokemon/")
+    //response received
     .then((res) => {
+      //transforming the response to json
       return res.json();
     })
+    //the readable data is received
     .then((data) => {
-      let url = data.results[1].url;
+      let url = data.results[1].url; //not using this but it's fetching on line 12 information about Ivysaur which is [1]
       fetch(url)
         .then((res) => res.json())
-        .then((poke) => console.log(poke));
+        .then((poke) => console.log(poke)); //end of what not using
+
+      //delaring where I'm wanting to look at data, then I'm mapping through the elements in array
       let html = data.results
         .map((pokemon) => {
-          //  let ability = data.results.url;
-          //  console.log(ability);
+          //returning a string that has template literals
           return `
          <p>Pokemon Name: ${pokemon.name} </br> API URL: ${pokemon.url} </p> 
           `;
         })
+        //map still had the name in an array so added .join("")
         .join("");
       console.log(html);
+
+      //could have used .innerHTML but picked .insertAdjacentHTML w/ "afterbegin" parameter so that the data enters how I'd like it
       document
         .querySelector("#pokeCatch")
-        .insertAdjacentHTML("afterbegin", html);
+        .insertAdjacentHTML("afterbegin", html); //the html is what was declared for pokemon name and url
     });
 }
 

@@ -24,6 +24,11 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
+.title {
+  background-color: #d9dad7;
+  padding: 1rem;
+  border-radius: 20px;
+}
 
 .container {
   margin-top: 40px;
@@ -36,8 +41,8 @@ h2 {
 }
 
 #pokeCatch p {
-  background-color: rgb(146, 144, 144);
-  color: white;
+  background-color: #d9dad7;
+  color: black;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 15px;
