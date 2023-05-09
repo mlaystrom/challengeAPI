@@ -10,6 +10,8 @@ function fetchData() {
         .then((poke) => console.log(poke));
       let html = data.results
         .map((pokemon) => {
+          //  let ability = data.results.url;
+          //  console.log(ability);
           return `
          <p>Pokemon Name: ${pokemon.name} </br> API URL: ${pokemon.url} </p> 
           `;
@@ -27,7 +29,7 @@ fetchData();
 //second (workine one!)
 /** 
 function fetchData() {
-  fetch("https://pokeapi.co/api/v2/pokemon/")
+  fetch("https://pokeapi.co/api/v2/pokemon/2/")
     .then((response) => {
       return response.json();
     })
